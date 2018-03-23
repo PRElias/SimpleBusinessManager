@@ -1,0 +1,42 @@
+﻿@model SimpleBusinessManager.Models.Recebimentos
+
+@{
+    ViewBag.Title = "Recebimentos";
+}
+
+@*<h2>Details</h2>*@
+
+<div>
+    @*<h4>Recebimentos</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Venda.Apelido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Venda.Apelido)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.RecebimentoId }) |
+    @Html.ActionLink("Voltar para a lista", "Index")
+</p>

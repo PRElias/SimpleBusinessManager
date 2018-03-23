@@ -1,0 +1,48 @@
+﻿@model SimpleBusinessManager.Models.Venda
+
+@{
+    ViewBag.Title = "Venda";
+}
+
+@*<h2>Delete</h2>*@
+
+<h3>Tem certeza que deseja apagar? Esta ação não pode ser desfeita</h3>
+<div>
+    @*<h4>Venda</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataPedido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoPagamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoPagamento)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para a lista", "Index")
+        </div>
+    }
+</div>

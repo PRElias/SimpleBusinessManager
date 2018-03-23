@@ -1,0 +1,43 @@
+﻿@model IEnumerable<SimpleBusinessManager.Models.Vendedor>
+
+@{
+    ViewBag.Title = "Vendedor";
+}
+
+@*<h2>Index</h2>*@
+<br />
+<br />
+<p>
+    @Html.ActionLink("Inserir um novo", "Create")
+</p>
+<table class="display" id="tabela">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", "Vendedor", new { id = item.VendedorId })" class="btn btn">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true" title="Editar"></i>
+                    </a>
+                    <a href="@Url.Action("Details", "Vendedor", new { id = item.VendedorId })" class="btn btn">
+                        <i class="fa fa-eye" aria-hidden="true" title="Detalhes"></i>
+                    </a>
+                    <a href="@Url.Action("Delete", "Vendedor", new { id = item.VendedorId })" class="btn btn">
+                        <i class="fa fa-trash-o" aria-hidden="true" title="Apagar"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

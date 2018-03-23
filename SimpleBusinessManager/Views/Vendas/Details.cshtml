@@ -1,0 +1,58 @@
+﻿@model SimpleBusinessManager.Models.Venda
+
+@{
+    ViewBag.Title = "Venda";
+}
+
+@*<h2>Details</h2>*@
+
+<div>
+    @*<h4>Venda</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataPedido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoPagamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoPagamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parcelas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parcelas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pago)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pago)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.PedidoId }) |
+    @Html.ActionLink("Voltar para a lista", "Index")
+</p>

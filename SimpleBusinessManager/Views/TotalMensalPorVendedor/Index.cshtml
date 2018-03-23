@@ -1,0 +1,42 @@
+﻿@model IEnumerable<SimpleBusinessManager.Relatorios.TotalMensalPorVendedor>
+
+@{
+    ViewBag.Title = "Total mensal por vendedor";
+}
+
+@*<h2>Index</h2>*@
+<br />
+<br />
+
+<table class="display" id="tabela">
+    <thead>
+        <tr>
+            <th>
+                Vendedor
+            </th>
+            <th>
+                Mês
+            </th>
+            <th>
+               Total
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vendedor)
+                </td>
+                <td>
+                    @Html.TrataMeses(item.Mes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
